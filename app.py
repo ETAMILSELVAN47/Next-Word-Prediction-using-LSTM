@@ -22,7 +22,7 @@ def predict_next_word(model,tokenizer,text,max_sequence_len):
     # 3.prediction
     predicted=model.predict(token_list,verbose=1)
     # 4.find the maximum value index
-    predicted_word_index=np.argmax(predicted,axis=1)
+    predicted_word_index=np.argmax(predicted,axis=1)[0]
     # 5.Return the word
     reverse_word_index={v:k for k,v in tokenizer.word_index.items()}
     return reverse_word_index.get(predicted_word_index)
