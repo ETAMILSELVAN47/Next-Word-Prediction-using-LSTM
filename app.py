@@ -6,7 +6,7 @@ import numpy as np
 import pickle
 
 # load the model
-model=load_model('model.h5')
+model=load_model('model.keras')
 
 # load the tokenizer
 with open(file='tokenizer.pkl',mode='rb') as file:
