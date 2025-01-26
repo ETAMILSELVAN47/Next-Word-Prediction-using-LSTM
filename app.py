@@ -18,7 +18,7 @@ def predict_next_word(model,tokenizer,text,max_sequence_len):
     if len(token_list)>=max_sequence_len:
         token_list=token_list[-(max_sequence_len-1):]        
     # 2.pad sequences
-    token_list=pad_sequences(sequneces=token_list,maxlen=max_sequence_len-1,padding='pre')        
+    token_list=pad_sequences(sequneces=[token_list],maxlen=max_sequence_len-1,padding='pre')        
     # 3.prediction
     predicted=model.predict(token_list,verbose=1)
     # 4.find the maximum value index
